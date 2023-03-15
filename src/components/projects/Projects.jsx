@@ -2,6 +2,7 @@ import React from "react";
 import { Htag, Container, Button } from "../UI";
 import { ProjectList } from "../";
 import styles from "./Projects.module.scss";
+import { visibleProjectCount } from "../../const";
 
 export const Projects = ({ projects = [], title }) => {
 	if (projects.length === 0) {
@@ -16,10 +17,14 @@ export const Projects = ({ projects = [], title }) => {
 						{title}
 					</Htag>
 				)}
+
 				<ProjectList projects={projects} />
-				<Button fullWidth className={styles.more}>
-					Загрузить еще
-				</Button>
+
+				{projects.length > visibleProjectCount && (
+					<Button fullWidth className={styles.more}>
+						Загрузить еще
+					</Button>
+				)}
 			</Container>
 		</section>
 	);

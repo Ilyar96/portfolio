@@ -1,64 +1,15 @@
-import React from "react";
 import { Intro, Projects } from "../../components";
-
-const mockData = [
-	{
-		id: 0,
-		title: "Личный сайт",
-		description: "Описание",
-		href: "https://iljar96.ru/advocate/advocate/",
-		preview:
-			"https://st.weblancer.net/download/5441503_250xr.jpg?time=1669010536",
-	},
-	{
-		id: 1,
-		title: "Личный сайт",
-		description: "Описание",
-		href: "https://iljar96.ru/advocate/advocate/",
-		preview:
-			"https://st.weblancer.net/download/5441503_250xr.jpg?time=1669010536",
-	},
-	{
-		id: 2,
-		title: "Личный сайт",
-		description: "Описание",
-		href: "https://iljar96.ru/advocate/advocate/",
-		preview:
-			"https://st.weblancer.net/download/5441503_250xr.jpg?time=1669010536",
-	},
-	{
-		id: 3,
-		title: "Личный сайт",
-		description: "Описание",
-		href: "https://iljar96.ru/advocate/advocate/",
-		preview:
-			"https://st.weblancer.net/download/5441503_250xr.jpg?time=1669010536",
-	},
-	{
-		id: 4,
-		title: "Личный сайт",
-		description: "Описание",
-		href: "https://iljar96.ru/advocate/advocate/",
-		preview:
-			"https://st.weblancer.net/download/5441503_250xr.jpg?time=1669010536",
-	},
-	{
-		id: 5,
-		title: "Личный сайт",
-		description: "Описание",
-		href: "https://iljar96.ru/advocate/advocate/",
-		preview:
-			"https://st.weblancer.net/download/5441503_250xr.jpg?time=1669010536",
-	},
-];
+import { useProjects } from "../../hooks/useProjects";
 
 export const Home = () => {
+	const { layout, wordpress, react } = useProjects();
+
 	return (
 		<div className="wrapper">
 			<Intro />
-			<Projects title={"Верстка"} projects={mockData} />
-			<Projects title={"WordPress"} projects={mockData} />
-			<Projects title={"React"} projects={mockData} />
+			{layout && <Projects title={"Верстка"} projects={layout} />}
+			{wordpress && <Projects title={"WordPress"} projects={wordpress} />}
+			{react && <Projects title={"React"} projects={react} />}
 		</div>
 	);
 };
