@@ -1,12 +1,21 @@
 import React from "react";
-import { Htag } from "../UI/";
+import { Htag, ScrollButton } from "../UI/";
+import styles from "./Intro.module.scss";
+import bgImage from "./coding.jpg";
 
 export const Intro = () => {
 	return (
-		<section className="">
-			<Htag tag={"h1"}>Ильяр Касыймов</Htag>
-			<h2>Фрилансер, Веб разработчик</h2>
-			<button></button>
+		<section className={styles.root}>
+			<img
+				className={styles.background}
+				src={bgImage}
+				alt="Ноутбук на рабочем столе"
+			/>
+			<Htag className={styles.h1} tag={"h1"}>
+				Lorem, ipsum.
+			</Htag>
+			<Htag tag={"h2"}>Фрилансер, Веб разработчик</Htag>
+			<ScrollButton className={styles.scroll} />
 		</section>
 	);
 };

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./components";
 import "normalize.css";
+import "./assets/scss/variables.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
