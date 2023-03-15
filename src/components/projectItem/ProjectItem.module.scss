@@ -1,0 +1,44 @@
+.project {
+	padding: 1.25rem 0.9375rem;
+
+	box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 0.1875rem;
+
+	transition: transform 0.3s ease;
+
+	@media (any-hover: hover) {
+		&:hover {
+			transform: translate3d(0, -0.9375rem, 0);
+
+			.title,
+			.description {
+				color: var(--primary);
+			}
+		}
+	}
+}
+
+.link {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+}
+
+.preview {
+	display: block;
+	border-radius: 0.1875rem;
+	border: 1px solid var(--gray);
+	object-fit: cover;
+}
+
+.title,
+.title:active {
+	margin: 0.625rem 0 0.3125rem;
+	font-size: 1.375rem;
+	color: var(--primary-text);
+	transition: color 0.3s ease;
+}
+
+.description {
+	transition: color 0.3s ease;
+}

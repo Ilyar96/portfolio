@@ -1,0 +1,24 @@
+.button {
+	padding: 0.625rem 1.25rem;
+	border: none;
+	border-radius: 0.3125rem;
+	cursor: pointer;
+}
+
+.primary {
+	background-color: var(--primary);
+	color: var(--white-text);
+
+	transition: color 0.3s ease, background-color 0.3s ease;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--primary-hover);
+		}
+	}
+}
+
+.fullWidth {
+	width: 100%;
+	padding: 1rem 1.25rem;
+}

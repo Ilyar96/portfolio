@@ -12,12 +12,12 @@ export const ScrollButton = ({ className }) => {
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				stroke="#fff"
-				stroke-width="1"
-				stroke-linecap="round"
-				stroke-linejoin="miter"
+				strokeWidth={1}
+				strokeLinecap="round"
+				strokeLinejoin="miter"
 			>
-				<polyline points="7 13 12 18 17 13"></polyline>
-				<polyline points="7 7 12 12 17 7"></polyline>
+				<polyline points="7 13 12 18 17 13" />
+				<polyline points="7 7 12 12 17 7" />
 			</svg>
 		</button>
 	);

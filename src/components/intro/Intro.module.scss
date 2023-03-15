@@ -7,7 +7,7 @@
 	align-items: center;
 	min-height: 100vh;
 
-	color: var(--white);
+	color: var(--white-text);
 
 	@media (max-height: 470px) {
 		min-height: 470px;
@@ -38,6 +38,10 @@
 
 .h1 {
 	margin-bottom: 1.5rem;
+}
+.h1,
+.h2 {
+	text-align: center;
 }
 
 .scroll {
