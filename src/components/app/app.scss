@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
+}
+
 body {
 	font-family: "Roboto", sans-serif;
 	color: var(--primary-text);
@@ -17,4 +22,15 @@ body {
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
 	overflow: hidden;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.wrapper > main {
+	flex: 0 1;
+	margin-top: auto;
 }

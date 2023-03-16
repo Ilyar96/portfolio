@@ -1,1 +1,1 @@
-export const visibleProjectCount = 6;
+export const projectsPerBlock = 6;

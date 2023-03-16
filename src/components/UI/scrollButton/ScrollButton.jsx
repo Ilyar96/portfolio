@@ -2,9 +2,17 @@ import React from "react";
 import styles from "./ScrollButton.module.scss";
 import cn from "classnames";
 
-export const ScrollButton = ({ className }) => {
+export const ScrollButton = ({
+	as: Component = "button",
+	className,
+	...props
+}) => {
 	return (
-		<button aria-hidden="true" className={cn(className, styles.scroll)}>
+		<Component
+			aria-hidden="true"
+			className={cn(className, styles.scroll)}
+			{...props}
+		>
 			<svg
 				width="80px"
 				height="80px"
@@ -19,6 +27,6 @@ export const ScrollButton = ({ className }) => {
 				<polyline points="7 13 12 18 17 13" />
 				<polyline points="7 7 12 12 17 7" />
 			</svg>
-		</button>
+		</Component>
 	);
 };

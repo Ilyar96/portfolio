@@ -3,6 +3,7 @@ import cn from "classnames";
 import styles from "./Button.module.scss";
 
 export const Button = ({
+	as: Component = "button",
 	children,
 	type = "primary",
 	className,
@@ -10,7 +11,7 @@ export const Button = ({
 	...props
 }) => {
 	return (
-		<button
+		<Component
 			className={cn(
 				styles.button,
 				className,
@@ -20,6 +21,6 @@ export const Button = ({
 			{...props}
 		>
 			{children}
-		</button>
+		</Component>
 	);
 };

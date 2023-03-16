@@ -1,7 +1,20 @@
 .list {
 	display: grid;
-	gap: 25px;
+	gap: 1.5625rem;
 	grid-template-columns: repeat(3, 1fr);
 	padding: 0;
 	list-style: none;
+
+	@media (max-width: 991.98px) {
+		grid-template-columns: 1fr 1fr;
+		gap: 1.25rem;
+	}
+
+	@media (max-width: 767.98px) {
+		gap: 1rem;
+	}
+
+	@media (max-width: 600.98px) {
+		grid-template-columns: 1fr;
+	}
 }

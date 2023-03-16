@@ -1,15 +1,32 @@
-import { Intro, Projects } from "../../components";
+import {
+	Intro,
+	ProjectsBlock,
+	Footer,
+	ProjectsBlockSkeleton,
+} from "../../components";
 import { useProjects } from "../../hooks/useProjects";
 
 export const Home = () => {
-	const { layout, wordpress, react } = useProjects();
+	const { layout, wordpress, reactProjects, isLoading } = useProjects();
+	console.log(wordpress);
 
 	return (
 		<div className="wrapper">
-			<Intro />
-			{layout && <Projects title={"Верстка"} projects={layout} />}
-			{wordpress && <Projects title={"WordPress"} projects={wordpress} />}
-			{react && <Projects title={"React"} projects={react} />}
+			<main>
+				<Intro />
+				{isLoading && <ProjectsBlockSkeleton />}
+				{layout && (
+					<ProjectsBlock id="layout" title={"Верстка"} projects={layout} />
+				)}
+				{wordpress && (
+					<ProjectsBlock title={"WordPress"} projects={wordpress} />
+				)}
+				{reactProjects && (
+					<ProjectsBlock title={"React"} projects={reactProjects} />
+				)}
+			</main>
+
+			<Footer />
 		</div>
 	);
 };
