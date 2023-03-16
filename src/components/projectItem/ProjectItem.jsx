@@ -5,7 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import styles from "./ProjectItem.module.scss";
 
 export const ProjectItem = ({ as: Component = "li", className, project }) => {
-	const { id, title, description, href, preview, github } = project;
+	const { id, title, tags, href, preview, github } = project;
 	return (
 		<Component className={cn(className, styles.project)}>
 			<Link className={styles.link} to={href} target="_blank">
@@ -14,7 +14,7 @@ export const ProjectItem = ({ as: Component = "li", className, project }) => {
 				</div>
 				<span className={styles.title}>{title}</span>
 			</Link>
-			<div className={styles.description}>{description}</div>
+			<div className={styles.tags}>{tags}</div>
 			{github && (
 				<a href={github} className={styles.github} target="_blank">
 					Ссылка на репозиторий

@@ -11,7 +11,7 @@
 			transform: translate3d(0, -0.9375rem, 0);
 
 			.title,
-			.description {
+			.tags {
 				color: var(--primary);
 			}
 		}
@@ -55,7 +55,7 @@
 	transition: color 0.3s ease;
 }
 
-.description {
+.tags {
 	line-height: 1.4;
 	transition: color 0.3s ease;
 }
