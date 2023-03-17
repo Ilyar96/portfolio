@@ -7,8 +7,10 @@
 	transition: transform 0.3s ease 0.1s;
 	@media (any-hover: hover) {
 		&:hover {
-			transition: transform 0.3s ease;
-			transform: translate3d(0, -0.9375rem, 0);
+			// transition: transform 0.3s ease;
+			&:not(.project-enter-active) {
+				transform: translate3d(0, -0.9375rem, 0);
+			}
 
 			.title,
 			.tags {
@@ -58,4 +60,59 @@
 .tags {
 	line-height: 1.4;
 	transition: color 0.3s ease;
+}
+
+.github {
+	display: inline-block;
+	margin: 0.5rem 0 0;
+	color: var(--primary);
+	text-decoration: none;
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--primary-hover);
+			text-decoration: underline;
+			text-underline-offset: 4px;
+		}
+	}
+}
+
+:global {
+	.project-enter {
+		opacity: 0;
+		transform: translate3d(0, 15px, 0);
+	}
+	.project-enter-active {
+		pointer-events: none;
+	}
+	.project-enter-active {
+		opacity: 1;
+		transform: translateZ(0);
+		transition: opacity 500ms ease-in, transform 500ms ease-in;
+		pointer-events: all;
+
+		&:nth-child(6n + 1) {
+			transition-delay: 0.1s;
+		}
+
+		&:nth-child(6n + 2) {
+			transition-delay: 0.2s;
+		}
+
+		&:nth-child(6n + 3) {
+			transition-delay: 0.3s;
+		}
+
+		&:nth-child(6n + 4) {
+			transition-delay: 0.4s;
+		}
+
+		&:nth-child(6n + 5) {
+			transition-delay: 0.5s;
+		}
+
+		&:nth-child(6n + 6) {
+			transition-delay: 0.6s;
+		}
+	}
 }
