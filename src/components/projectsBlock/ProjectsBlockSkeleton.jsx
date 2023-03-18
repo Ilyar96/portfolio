@@ -1,6 +1,6 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
-import { Htag, Container, Button } from "../UI";
+import { Htag, Container } from "../UI";
 import { ProjectListSkeleton } from "..";
 import styles from "./ProjectsBlock.module.scss";
 

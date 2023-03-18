@@ -52,7 +52,7 @@
 	width: 4.375rem;
 	height: 5rem;
 
-	transform: translate3d(-50%, -20px, 0);
+	transform: translate3d(-50%, -1.25rem, 0);
 }
 
 .scroll svg {
@@ -61,9 +61,9 @@
 
 @keyframes bounce {
 	0% {
-		transform: translate3d(0, -20px, 0);
+		transform: translate3d(0, -1.25rem, 0);
 	}
 	100% {
-		transform: translate3d(0, 20px, 0);
+		transform: translate3d(0, 1.25rem, 0);
 	}
 }

@@ -5,18 +5,28 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { CSSTransition } from "react-transition-group";
 import styles from "./ProjectItem.module.scss";
 
-export const ProjectItem = ({ as: Component = "li", className, project }) => {
+export const ProjectItem = ({
+	as: Component = "li",
+	className,
+	project,
+	in: inProp,
+	...props
+}) => {
 	const { title, tags, href, preview, github } = project;
 	const nodeRef = useRef(null);
 
 	return (
 		<CSSTransition
 			nodeRef={nodeRef}
-			timeout={1000}
+			timeout={100}
 			classNames={"project"}
-			in={true}
+			in={inProp}
 		>
-			<Component className={cn(className, styles.project)} ref={nodeRef}>
+			<Component
+				className={cn(className, styles.project)}
+				ref={nodeRef}
+				{...props}
+			>
 				<Link className={styles.link} to={href} target="_blank">
 					<div className={styles.previewWrapper}>
 						<LazyLoadImage

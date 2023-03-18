@@ -15,7 +15,8 @@
     "react-lazy-load-image-component": "^1.5.6",
     "react-router-dom": "^6.9.0",
     "react-transition-group": "^4.4.5",
-    "sass": "^1.59.3"
+    "sass": "^1.59.3",
+    "yet-another-react-lightbox": "^2.6.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^3.0.1",
