@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import cn from "classnames";
 import { Home } from "../../pages";
 import { Footer } from "../";
 import { useScrollDirection } from "../../hooks";
 import "./app.scss";
-import cn from "classnames";
 
 export const App = () => {
 	const wrapperRef = useRef(null);
