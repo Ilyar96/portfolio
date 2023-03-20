@@ -6,10 +6,16 @@ export const List = ({
 	children,
 	className,
 	as: Component = "ul",
+	marker = true,
 	...props
 }) => {
 	return (
-		<Component className={cn(styles.list, className)} {...props}>
+		<Component
+			className={cn(styles.list, className, {
+				[styles.withMarker]: marker,
+			})}
+			{...props}
+		>
 			{children}
 		</Component>
 	);

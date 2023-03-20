@@ -1,8 +1,15 @@
 import React, { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import cn from "classnames";
-import { Htag, Section, P, List, ListItem } from "../../components/UI";
-import { Container } from "../../components/UI/container/Container";
+import {
+	Container,
+	Htag,
+	Section,
+	P,
+	List,
+	ListItem,
+} from "../../components/UI";
+import { Skills } from "../../components";
 import { setIntersectionObserverOptions } from "../../helpers";
 import { useIntersectionObserver } from "../../hooks";
 import styles from "./About.module.scss";
@@ -60,18 +67,7 @@ export const About = ({ ...props }) => {
 					Технические навыки:
 				</Htag>
 
-				<listItem>
-					<ListItem>HTML5</ListItem>
-					<ListItem>CSS3</ListItem>
-					<ListItem>Scss</ListItem>
-					<ListItem>JavaScript</ListItem>
-					<ListItem>TypeScript</ListItem>
-					<ListItem>React</ListItem>
-					<ListItem>Redux</ListItem>
-					<ListItem>Next</ListItem>
-					<ListItem>GitHub</ListItem>
-					<ListItem>Git</ListItem>
-				</listItem>
+				<Skills></Skills>
 			</Container>
 		</Section>
 	);

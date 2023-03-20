@@ -1,0 +1,43 @@
+.root {
+	margin: 0;
+	@media (min-width: 575.98px) {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-gap: 1.5rem;
+	}
+
+	@media (max-width: 575.98px) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 0 -1.5rem;
+	}
+}
+
+.listItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	list-style: none;
+	box-sizing: border-box;
+
+	@media (max-width: 575.98px) {
+		flex: 0 0 33.333%;
+		margin: 0 0 1.5rem;
+		padding: 0 0.85rem;
+	}
+}
+
+.icon {
+	--skile-icon-width: 3.125rem;
+	display: block;
+	flex: 0 0 var(--skile-icon-width);
+	width: var(--skile-icon-width);
+	height: var(--skile-icon-width);
+	margin: 0 0 0.3125rem;
+}
+.title {
+	width: 100%;
+	text-align: center;
+}

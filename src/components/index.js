@@ -6,3 +6,4 @@ export * from "./projectList/ProjectListSkeleton";
 export * from "./footer/Footer";
 export * from "./socialList/SocialList";
 export * from "./lightbox/Lightbox";
+export * from "./skills/Skills";
