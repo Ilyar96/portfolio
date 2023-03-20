@@ -8,7 +8,7 @@ export const ProjectsBlockSkeleton = ({ ...props }) => {
 	return (
 		<section className={styles.root} {...props}>
 			<Container>
-				<Htag tag="h2" className={styles.h2}>
+				<Htag tag="h2" className={styles.h2} center>
 					<ContentLoader
 						speed={2}
 						width={320}

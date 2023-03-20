@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import styles from "./Footer.module.scss";
+import { CSSTransition } from "react-transition-group";
+import cn from "classnames";
 import { SocialList } from "../";
 import { Container, Htag } from "../UI";
 import { useIntersectionObserver } from "../../hooks";
 import { setIntersectionObserverOptions } from "../../helpers";
-import { CSSTransition } from "react-transition-group";
-import cn from "classnames";
+import styles from "./Footer.module.scss";
 
 export const Footer = () => {
 	const footerRef = useRef(null);
@@ -16,6 +16,7 @@ export const Footer = () => {
 		setIntersectionObserverOptions()
 	);
 	const isFooterVisible = entryFooter?.isIntersecting;
+
 	return (
 		<footer className={styles.footer} ref={footerRef}>
 			<Container className={styles.container}>

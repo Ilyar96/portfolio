@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export const useProjects = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +20,19 @@ export const useProjects = () => {
 			setWordpressProjects(data[0].wordpress);
 			setReactProjects(data[0].react);
 		} catch (err) {
-			console.log(err.message);
+			toast.error(
+				"Не удалось загрузить данные. Повторите попытку чуть позже.",
+				{
+					position: "top-right",
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "light",
+				}
+			);
 		}
 		setIsLoading(false);
 	};
