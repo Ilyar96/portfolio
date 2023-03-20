@@ -1,7 +1,4 @@
 export * from "./app/App";
-export * from "./intro/Intro";
-export * from "./projectsBlock/ProjectsBlock";
-export * from "./projectsBlock/ProjectsBlockSkeleton";
 export * from "./projectItem/ProjectItem";
 export * from "./projectItem/ProjectItemSkeleton";
 export * from "./projectList/ProjectList";

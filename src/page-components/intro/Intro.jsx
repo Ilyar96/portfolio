@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { CSSTransition } from "react-transition-group";
 import cn from "classnames";
-import { Htag, ScrollButton, Container } from "../UI/";
+import { Htag, ScrollButton, Container } from "../../components/UI";
 import styles from "./Intro.module.scss";
 import bgImage from "./coding.jpg";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
@@ -61,7 +61,7 @@ export const Intro = () => {
 				>
 					<ScrollButton
 						as={"a"}
-						href="#layout"
+						href="#about"
 						rel="nofollow"
 						className={cn(styles.scroll, "fade-in")}
 						ref={buttonRef}

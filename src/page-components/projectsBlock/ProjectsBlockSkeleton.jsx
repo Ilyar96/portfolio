@@ -1,7 +1,7 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
-import { Htag, Container } from "../UI";
-import { ProjectListSkeleton } from "..";
+import { Htag, Container } from "../../components/UI";
+import { ProjectListSkeleton } from "../../components";
 import styles from "./ProjectsBlock.module.scss";
 
 export const ProjectsBlockSkeleton = ({ ...props }) => {

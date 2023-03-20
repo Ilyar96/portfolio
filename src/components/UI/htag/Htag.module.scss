@@ -1,21 +1,31 @@
 .h1 {
-	margin: 0;
+	margin: 0 0 3rem;
 
 	font-size: 4rem;
 	font-weight: 500;
 }
 
 .h2 {
-	margin: 0;
+	margin: 0 0 2.5rem;
 
 	font-size: 2.5rem;
 	font-weight: 500;
 }
 
 .h3 {
-	margin: 0;
+	margin: 0 0 2rem;
 
-	font-size: 1.25rem;
+	font-size: 2rem;
 	font-weight: 600;
 	line-height: 135%; /* 27/20 */
+}
+
+.firstLetterColored {
+	&::first-letter {
+		color: var(--primary);
+	}
+}
+
+.center {
+	text-align: center;
 }

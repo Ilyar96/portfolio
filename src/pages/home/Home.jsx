@@ -1,4 +1,9 @@
-import { Intro, ProjectsBlock, ProjectsBlockSkeleton } from "../../components";
+import {
+	About,
+	Intro,
+	ProjectsBlock,
+	ProjectsBlockSkeleton,
+} from "../../page-components";
 import { useProjects } from "../../hooks";
 import data from "../../data.json";
 
@@ -9,13 +14,12 @@ export const Home = () => {
 	return (
 		<>
 			<Intro />
+			<About id="about" />
 			{isLoading && <ProjectsBlockSkeleton />}
 			{reactProjects && (
 				<ProjectsBlock title={"React"} projects={reactProjects} />
 			)}
-			{layout && (
-				<ProjectsBlock id="layout" title={"Верстка"} projects={layout} />
-			)}
+			{layout && <ProjectsBlock title={"Верстка"} projects={layout} />}
 			{wordpress && <ProjectsBlock title={"WordPress"} projects={wordpress} />}
 		</>
 	);

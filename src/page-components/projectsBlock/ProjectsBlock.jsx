@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import cn from "classnames";
-import { Htag, Container, Button } from "../UI";
-import { ProjectList } from "..";
+import { Htag, Container, Button, Section } from "../../components/UI";
+import { ProjectList } from "../../components";
 import { projectsPerBlock } from "../../const";
 import { useIntersectionObserver } from "../../hooks";
 import { setIntersectionObserverOptions } from "../../helpers";
@@ -33,7 +33,7 @@ export const ProjectsBlock = ({ projects = [], title, ...props }) => {
 	}
 
 	return (
-		<section className={cn(styles.root, "with-animate")} {...props}>
+		<Section className={"with-animate"} {...props}>
 			<Container>
 				{title && (
 					<CSSTransition
@@ -46,6 +46,8 @@ export const ProjectsBlock = ({ projects = [], title, ...props }) => {
 							ref={titleRef}
 							tag="h2"
 							className={cn(styles.h2, "fade-in-up")}
+							center
+							firstLetterColored
 						>
 							{title}
 						</Htag>
@@ -72,6 +74,6 @@ export const ProjectsBlock = ({ projects = [], title, ...props }) => {
 					</CSSTransition>
 				)}
 			</Container>
-		</section>
+		</Section>
 	);
 };
