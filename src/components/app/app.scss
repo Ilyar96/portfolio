@@ -35,30 +35,25 @@ body {
 	margin-top: auto;
 }
 
-.fade-in-up {
+.fade-in-up,
+.fade-in-left {
 	opacity: 0;
-	transform: translate3d(0, 0.9375rem, 0);
 	transition: transform 0.4s ease, opacity 0.4s ease;
 }
-.fade-in-up-enter-done {
+.fade-in-up {
+	transform: translate3d(0, 0.9375rem, 0);
+}
+
+.fade-in-left {
+	transform: translate3d(0.9375rem, 0, 0);
+}
+
+.fade-in-up-enter-done,
+.fade-in-left-enter-done {
 	opacity: 1;
 	transform: translateZ(0);
 	transition: transform 0.4s ease, opacity 0.4s ease;
 }
-
-// .scroll-direction-up .fade-in-up {
-// 	transform: translate3d(0, -0.9375rem, 0);
-// }
-// .scroll-direction-up .fade-in-up-enter-done {
-// 	transform: translateZ(0);
-// }
-
-// .scroll-direction-down .fade-in-up {
-// 	transform: translate3d(0, 0.9375rem, 0);
-// }
-// .scroll-direction-down .fade-in-up-enter-done {
-// 	transform: translateZ(0);
-// }
 
 .fade-in {
 	opacity: 0;

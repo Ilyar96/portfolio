@@ -11,31 +11,35 @@ import githubIcon from "../assets/img/skills/github.svg";
 
 export const getSkillsList = () => {
 	return [
-		{ id: 0, title: "HTML5", icon: htmlIcon },
-		{ id: 1, title: "CSS3", icon: cssIcon },
-		{ id: 2, title: "Sass", icon: sassIcon },
+		{ id: 0, title: "HTML5", icon: htmlIcon, delay: "0.1s" },
+		{ id: 1, title: "CSS3", icon: cssIcon, delay: "0.9s" },
+		{ id: 2, title: "Sass", icon: sassIcon, delay: "0.3s" },
 		{
 			id: 3,
 			title: "JavaScript",
 			icon: jsIcon,
+			delay: "0.7s",
 		},
 		{
 			id: 4,
 			title: "TypeScript",
 			icon: tsIcon,
+			delay: "0.5s",
 		},
-		{ id: 5, title: "React", icon: reactIcon },
-		{ id: 6, title: "Redux", icon: reduxIcon },
+		{ id: 5, title: "React", icon: reactIcon, delay: "1s" },
+		{ id: 6, title: "Redux", icon: reduxIcon, delay: "0.2s" },
 		{
 			id: 7,
 			title: "Next",
 			icon: nextIcon,
+			delay: "0.8s",
 		},
-		{ id: 8, title: "Git", icon: gitIcon },
+		{ id: 8, title: "Git", icon: gitIcon, delay: "0.4s" },
 		{
 			id: 9,
 			title: "GitHub",
 			icon: githubIcon,
+			delay: "0.6s",
 		},
 	];
 };
