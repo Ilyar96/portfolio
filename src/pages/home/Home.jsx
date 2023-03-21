@@ -4,6 +4,7 @@ import {
 	Intro,
 	ProjectsBlock,
 	ProjectsBlockSkeleton,
+	Reviews,
 } from "../../page-components";
 import { useProjects } from "../../hooks";
 
@@ -28,6 +29,7 @@ export const Home = () => {
 			)}
 			{layout && <ProjectsBlock title={"Верстка"} projects={layout} />}
 			{wordpress && <ProjectsBlock title={"WordPress"} projects={wordpress} />}
+			<Reviews />
 		</>
 	);
 };

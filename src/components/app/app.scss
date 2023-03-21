@@ -36,7 +36,8 @@ body {
 }
 
 .fade-in-up,
-.fade-in-left {
+.fade-in-left,
+.fade-in-right {
 	opacity: 0;
 	transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -47,9 +48,13 @@ body {
 .fade-in-left {
 	transform: translate3d(0.9375rem, 0, 0);
 }
+.fade-in-right {
+	transform: translate3d(-0.9375rem, 0, 0);
+}
 
 .fade-in-up-enter-done,
-.fade-in-left-enter-done {
+.fade-in-left-enter-done,
+.fade-in-right-enter-done {
 	opacity: 1;
 	transform: translateZ(0);
 	transition: transform 0.4s ease, opacity 0.4s ease;

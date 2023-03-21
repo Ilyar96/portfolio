@@ -17,9 +17,10 @@ export const ProjectsBlock = ({
 	const [visibleProjectsCount, setVisibleProjectsCount] =
 		useState(projectsPerBlock);
 	const titleRef = useRef(null);
+	const subtitleRef = useRef(null);
 	const buttonRef = useRef(null);
 	const entryTitle = useIntersectionObserver(
-		titleRef,
+		subtitleRef,
 		setIntersectionObserverOptions()
 	);
 	const entryButton = useIntersectionObserver(
@@ -41,26 +42,33 @@ export const ProjectsBlock = ({
 		<Section className={"with-animate"} {...props}>
 			<Container>
 				{mainTitle && (
-					<Htag
-						// ref={titleRef}
-						tag="h2"
-						className={cn(styles.h2, "fade-in-upp")}
-						center
-						firstLetterColored
+					<CSSTransition
+						nodeRef={titleRef}
+						timeout={100}
+						classNames={"fade-in"}
+						in={isTitleVisible}
 					>
-						{mainTitle}
-					</Htag>
+						<Htag
+							ref={titleRef}
+							tag="h2"
+							className={cn(styles.h2, "fade-in")}
+							center
+							firstLetterColored
+						>
+							{mainTitle}
+						</Htag>
+					</CSSTransition>
 				)}
 
 				{title && (
 					<CSSTransition
-						nodeRef={titleRef}
+						nodeRef={subtitleRef}
 						timeout={100}
 						classNames={"fade-in-up"}
 						in={isTitleVisible}
 					>
 						<Htag
-							ref={titleRef}
+							ref={subtitleRef}
 							tag="h3"
 							className={cn(styles.h2, "fade-in-up")}
 							center

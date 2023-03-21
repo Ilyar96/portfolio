@@ -23,7 +23,7 @@ export const Intro = () => {
 		<section className={styles.root}>
 			<Container>
 				<picture>
-					<source media="(max-width: 768px)" srcset={bgMobImage} />
+					<source media="(max-width: 768px)" srcSet={bgMobImage} />
 					<LazyLoadImage
 						className={styles.background}
 						src={bgImage}

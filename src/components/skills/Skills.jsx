@@ -1,9 +1,10 @@
 import React, { useRef, forwardRef } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import cn from "classnames";
 import { getSkillsList } from "../../helpers";
 import { List, ListItem } from "../UI";
 import styles from "./Skills.module.scss";
-import cn from "classnames";
 
 const skillList = getSkillsList();
 
@@ -29,7 +30,7 @@ export const Skills = forwardRef(({ isVisible, ...props }, ref) => {
 							style={{ transitionDelay: delay }}
 							ref={ref}
 						>
-							<img className={styles.icon} src={icon} alt={title} />
+							<LazyLoadImage className={styles.icon} src={icon} alt={title} />
 							<span className={styles.title}>{title}</span>
 						</ListItem>
 					</CSSTransition>
