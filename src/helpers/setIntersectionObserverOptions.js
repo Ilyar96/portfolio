@@ -1,6 +1,6 @@
 export const setIntersectionObserverOptions = (...options) => {
 	return {
-		// rootMargin: "-50px",
+		rootMargin: "-100px",
 		freezeOnceVisible: true,
 		...options,
 	};

@@ -49,7 +49,7 @@ export const About = ({ ...props }) => {
 	const isSkillsVisible = skillsEntry?.isIntersecting;
 
 	return (
-		<Section {...props}>
+		<Section className={styles.root} {...props}>
 			<Container>
 				<CSSTransition
 					nodeRef={titleRef}

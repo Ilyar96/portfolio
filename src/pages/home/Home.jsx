@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import {
 	About,
 	Intro,
@@ -5,20 +6,25 @@ import {
 	ProjectsBlockSkeleton,
 } from "../../page-components";
 import { useProjects } from "../../hooks";
-import data from "../../data.json";
 
 export const Home = () => {
 	const { layout, wordpress, reactProjects, isLoading } = useProjects();
-	// const { layout, wordpress, reactProjects } = data[0];
-	// const isLoading = false;
-	console.log(layout);
 	return (
 		<>
+			<Helmet>
+				<title>Ильяр Касыймов | Сайт-портфолио</title>
+				<link rel="canonical" href="http://mysite.com/example" />
+			</Helmet>
+
 			<Intro />
 			<About id="about" />
 			{isLoading && <ProjectsBlockSkeleton />}
 			{reactProjects && (
-				<ProjectsBlock title={"React"} projects={reactProjects} />
+				<ProjectsBlock
+					mainTitle="Портфолио"
+					title={"React"}
+					projects={reactProjects}
+				/>
 			)}
 			{layout && <ProjectsBlock title={"Верстка"} projects={layout} />}
 			{wordpress && <ProjectsBlock title={"WordPress"} projects={wordpress} />}

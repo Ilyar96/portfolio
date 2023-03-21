@@ -1,18 +1,12 @@
 .project {
-	padding: 1.25rem 0.9375rem;
+	position: relative;
+
+	padding: 1.25rem 0.9375rem 3rem;
 
 	box-shadow: 0 0 0.8125rem 1px rgba(0, 0, 0, 0.2);
 	border-radius: 0.1875rem;
 
 	transition: transform 0.3s ease 0.1s;
-
-	@media (any-hover: hover) {
-		&:hover {
-			.title {
-				color: var(--primary);
-			}
-		}
-	}
 }
 
 :global {
@@ -26,12 +20,6 @@
 	}
 }
 
-.link {
-	display: flex;
-	flex-direction: column;
-	text-decoration: none;
-}
-
 .previewWrapper {
 	position: relative;
 	height: 0;
@@ -40,6 +28,28 @@
 	background: #f3f3f3;
 	border-radius: 0.1875rem;
 	border: 1px solid var(--gray);
+	cursor: pointer;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		display: block;
+		background: url("./glass.svg") center/60px no-repeat rgba(0, 0, 0, 0.7);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease, visibility 0.3s ease;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			&::before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
 }
 .preview {
 	position: absolute;
@@ -49,7 +59,6 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	cursor: pointer;
 	transition: transform 0.3s ease;
 
 	@media (any-hover: hover) {
@@ -61,10 +70,18 @@
 
 .title,
 .title:active {
+	display: inline-block;
 	margin: 0.625rem 0 0.3125rem;
 	font-size: 1.375rem;
 	color: var(--primary-text);
 	transition: color 0.3s ease;
+	text-decoration: none;
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--primary);
+		}
+	}
 }
 
 .tags {
@@ -86,46 +103,6 @@
 		}
 	}
 }
-
-// :global {
-// 	.project-enter {
-// 		opacity: 0;
-// 		transform: translate3d(0, 0.9375rem, 0);
-// 	}
-// 	.project-enter-active {
-// 		pointer-events: none;
-// 	}
-// 	.project-enter-active {
-// 		opacity: 1;
-// 		transform: translateZ(0);
-// 		transition: opacity 500ms ease-in, transform 500ms ease-in;
-// 		pointer-events: all;
-
-// 	}
-// }
-
-// :global {
-// 	.with-animate {
-// 		:local {
-// 			.project {
-// 				opacity: 0;
-// 				transform: translate3d(0, 0.9375rem, 0);
-// 				transition: transform 0.5s ease, opacity 0.3s ease;
-// 			}
-// 		}
-// 	}
-// }
-
-// :global {
-// 	.animated {
-// 		:local {
-// 			.project {
-// 				opacity: 1;
-// 				transform: translateZ(0);
-// 			}
-// 		}
-// 	}
-// }
 
 :global {
 	.with-animate {
@@ -156,6 +133,36 @@
 			&:nth-child(6n + 6) {
 				transition-delay: 0.6s;
 			}
+		}
+	}
+}
+
+.footerLinks {
+	position: absolute;
+	bottom: 1.25rem;
+	left: 0.9375rem;
+	display: flex;
+	align-items: center;
+}
+
+.footerLink {
+	display: block;
+	width: 1.25rem;
+	height: 1.25rem;
+	flex: 0 0 1.25rem;
+	margin-right: 0.4375rem;
+	color: var(--primary-text);
+	transition: color 0.3s ease;
+
+	svg {
+		object-fit: contain;
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--primary);
 		}
 	}
 }

@@ -1,15 +1,15 @@
 import React, { forwardRef } from "react";
 import cn from "classnames";
-import styles from "./Button.module.scss";
+import styles from "./Htag.module.scss";
 
-export const Button = forwardRef(
+export const Htag = forwardRef(
 	(
 		{
-			as: Component = "button",
-			children,
-			appearance = "primary",
+			tag: Component,
 			className,
-			fullWidth,
+			firstLetterColored,
+			center,
+			children,
 			...props
 		},
 		ref
@@ -17,10 +17,10 @@ export const Button = forwardRef(
 		return (
 			<Component
 				className={cn(
-					styles.button,
 					className,
-					{ [styles[appearance]]: appearance },
-					{ [styles.fullWidth]: fullWidth }
+					styles[Component],
+					{ [styles.firstLetterColored]: firstLetterColored },
+					{ [styles.center]: center }
 				)}
 				ref={ref}
 				{...props}

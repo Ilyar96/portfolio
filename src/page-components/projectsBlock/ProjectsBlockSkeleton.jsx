@@ -21,6 +21,19 @@ export const ProjectsBlockSkeleton = ({ ...props }) => {
 					</ContentLoader>
 				</Htag>
 
+				<Htag tag="h3" className={styles.h2} center>
+					<ContentLoader
+						speed={2}
+						width={240}
+						height={43}
+						viewBox="0 0 240 43"
+						backgroundColor="#f3f3f3"
+						foregroundColor="#ecebeb"
+					>
+						<rect x="0" y="0" rx="3" ry="3" width="320" height="46" />
+					</ContentLoader>
+				</Htag>
+
 				<ProjectListSkeleton />
 
 				<ContentLoader

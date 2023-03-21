@@ -22,12 +22,12 @@ export const Skills = forwardRef(({ isVisible, ...props }, ref) => {
 						timeout={400}
 						classNames={"fade-in"}
 						in={isVisible}
+						key={id}
 					>
 						<ListItem
 							className={cn(styles.listItem, "fade-in")}
-							key={id}
-							ref={ref}
 							style={{ transitionDelay: delay }}
+							ref={ref}
 						>
 							<img className={styles.icon} src={icon} alt={title} />
 							<span className={styles.title}>{title}</span>

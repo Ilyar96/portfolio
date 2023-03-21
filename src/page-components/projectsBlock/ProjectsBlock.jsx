@@ -8,7 +8,12 @@ import { useIntersectionObserver } from "../../hooks";
 import { setIntersectionObserverOptions } from "../../helpers";
 import styles from "./ProjectsBlock.module.scss";
 
-export const ProjectsBlock = ({ projects = [], title, ...props }) => {
+export const ProjectsBlock = ({
+	projects = [],
+	title,
+	mainTitle,
+	...props
+}) => {
 	const [visibleProjectsCount, setVisibleProjectsCount] =
 		useState(projectsPerBlock);
 	const titleRef = useRef(null);
@@ -35,6 +40,18 @@ export const ProjectsBlock = ({ projects = [], title, ...props }) => {
 	return (
 		<Section className={"with-animate"} {...props}>
 			<Container>
+				{mainTitle && (
+					<Htag
+						// ref={titleRef}
+						tag="h2"
+						className={cn(styles.h2, "fade-in-upp")}
+						center
+						firstLetterColored
+					>
+						{mainTitle}
+					</Htag>
+				)}
+
 				{title && (
 					<CSSTransition
 						nodeRef={titleRef}
@@ -44,10 +61,9 @@ export const ProjectsBlock = ({ projects = [], title, ...props }) => {
 					>
 						<Htag
 							ref={titleRef}
-							tag="h2"
+							tag="h3"
 							className={cn(styles.h2, "fade-in-up")}
 							center
-							firstLetterColored
 						>
 							{title}
 						</Htag>
