@@ -38,10 +38,9 @@ export const ProjectItem = ({
 				<Component
 					className={cn(className, styles.project)}
 					ref={nodeRef}
-					onClick={onClick}
 					{...props}
 				>
-					<div className={styles.previewWrapper}>
+					<div className={styles.previewWrapper} onClick={onClick}>
 						<LazyLoadImage
 							className={styles.preview}
 							src={preview}
@@ -93,7 +92,7 @@ export const ProjectItem = ({
 			{isLightboxOpen && (
 				<Lightbox
 					open={isLightboxOpen}
-					slides={[{ src: gallery ? gallery : preview }]}
+					slides={gallery ? gallery : [{ src: preview }]}
 					close={() => setIsLightboxOpen(false)}
 				/>
 			)}

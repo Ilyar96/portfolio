@@ -13,7 +13,7 @@ export const Home = () => {
 	return (
 		<>
 			<Helmet>
-				<title>Ильяр Касыймов | Сайт-портфолио</title>
+				<title>Ильяр Касыймов | WEB-разработчик</title>
 				<link rel="canonical" href="http://mysite.com/example" />
 			</Helmet>
 
