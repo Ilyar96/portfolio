@@ -24,7 +24,7 @@ export const SocialList = ({ className = "", center }) => {
 				</svg>
 			</a>
 			<a
-				href="https:wa.me/+79393105646"
+				href="https://wa.me/+79393105646"
 				className={styles.socialLink}
 				target="_blank"
 				rel="nofollow"
