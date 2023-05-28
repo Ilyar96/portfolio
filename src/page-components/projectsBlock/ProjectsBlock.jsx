@@ -5,6 +5,7 @@ import { Htag, Container, Button, Section } from "../../components/UI";
 import { ProjectList } from "../../components";
 import { projectsPerBlock } from "../../const";
 import { useIntersectionObserver } from "../../hooks";
+import { useIntersectionObserver2 } from "../../hooks/useIntersectionObserver2";
 import { setIntersectionObserverOptions } from "../../helpers";
 import styles from "./ProjectsBlock.module.scss";
 
@@ -30,6 +31,12 @@ export const ProjectsBlock = ({
 	const isTitleVisible = entryTitle?.isIntersecting;
 	const isButtonVisible = entryButton?.isIntersecting;
 
+	const onScreen = useIntersectionObserver(
+		subtitleRef,
+		setIntersectionObserverOptions()
+	);
+	console.log("onScreen: ", onScreen);
+
 	const onClick = () => {
 		setVisibleProjectsCount((prev) => prev + projectsPerBlock);
 	};
@@ -45,13 +52,13 @@ export const ProjectsBlock = ({
 					<CSSTransition
 						nodeRef={titleRef}
 						timeout={100}
-						classNames={"fade-in"}
+						classNames={"fade-in-up"}
 						in={isTitleVisible}
 					>
 						<Htag
 							ref={titleRef}
 							tag="h2"
-							className={cn(styles.h2, "fade-in")}
+							className={cn(styles.h2, "fade-in-up")}
 							center
 							firstLetterColored
 						>

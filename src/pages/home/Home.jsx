@@ -14,7 +14,6 @@ export const Home = () => {
 		<>
 			<Helmet>
 				<title>Ильяр Касыймов | WEB-разработчик</title>
-				<link rel="canonical" href="http://mysite.com/example" />
 			</Helmet>
 
 			<Intro />
