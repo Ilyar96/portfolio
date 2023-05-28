@@ -26,7 +26,7 @@ export const ProjectList = ({
 				className={cn(styles.list, className)}
 				{...props}
 			>
-				{projects.map((project, i) => (
+				{projects.map((project) => (
 					<ProjectItem key={project.id} project={project} in={isVisible} />
 				))}
 			</Component>

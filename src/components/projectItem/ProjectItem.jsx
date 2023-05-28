@@ -51,6 +51,7 @@ export const ProjectItem = ({
 						className={styles.title}
 						to={href}
 						target="_blank"
+						rel="noreferrer"
 						ref={linkRef}
 					>
 						{title}
