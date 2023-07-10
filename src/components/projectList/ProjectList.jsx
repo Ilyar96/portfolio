@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import cn from "classnames";
 import { TransitionGroup } from "react-transition-group";
 import { ProjectItem } from "../";
@@ -10,6 +10,7 @@ export const ProjectList = ({
 	as: Component = "ul",
 	className,
 	projects,
+	setIsVisible,
 	...props
 }) => {
 	const listRef = useRef(null);
@@ -18,6 +19,10 @@ export const ProjectList = ({
 		setIntersectionObserverOptions()
 	);
 	const isVisible = entry?.isIntersecting;
+
+	useEffect(() => {
+		isVisible && setIsVisible(true);
+	}, [isVisible]);
 
 	return (
 		<TransitionGroup component={null}>

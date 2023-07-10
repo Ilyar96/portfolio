@@ -1,12 +1,10 @@
 import React, { useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import cn from "classnames";
+
 import { Htag, Container, Button, Section } from "../../components/UI";
 import { ProjectList } from "../../components";
 import { projectsPerBlock } from "../../const";
-import { useIntersectionObserver } from "../../hooks";
-import { useIntersectionObserver2 } from "../../hooks/useIntersectionObserver2";
-import { setIntersectionObserverOptions } from "../../helpers";
 import styles from "./ProjectsBlock.module.scss";
 
 export const ProjectsBlock = ({
@@ -17,25 +15,10 @@ export const ProjectsBlock = ({
 }) => {
 	const [visibleProjectsCount, setVisibleProjectsCount] =
 		useState(projectsPerBlock);
+	const [isVisible, setIsVisible] = useState(false);
 	const titleRef = useRef(null);
 	const subtitleRef = useRef(null);
 	const buttonRef = useRef(null);
-	const entryTitle = useIntersectionObserver(
-		subtitleRef,
-		setIntersectionObserverOptions()
-	);
-	const entryButton = useIntersectionObserver(
-		buttonRef,
-		setIntersectionObserverOptions()
-	);
-	const isTitleVisible = entryTitle?.isIntersecting;
-	const isButtonVisible = entryButton?.isIntersecting;
-
-	const onScreen = useIntersectionObserver(
-		subtitleRef,
-		setIntersectionObserverOptions()
-	);
-	console.log("onScreen: ", onScreen);
 
 	const onClick = () => {
 		setVisibleProjectsCount((prev) => prev + projectsPerBlock);
@@ -51,14 +34,14 @@ export const ProjectsBlock = ({
 				{mainTitle && (
 					<CSSTransition
 						nodeRef={titleRef}
-						timeout={100}
-						classNames={"fade-in-up"}
-						in={isTitleVisible}
+						timeout={150}
+						classNames={"fade-in"}
+						in={isVisible}
 					>
 						<Htag
 							ref={titleRef}
 							tag="h2"
-							className={cn(styles.h2, "fade-in-up")}
+							className={cn(styles.h2, "fade-in")}
 							center
 							firstLetterColored
 						>
@@ -70,9 +53,9 @@ export const ProjectsBlock = ({
 				{title && (
 					<CSSTransition
 						nodeRef={subtitleRef}
-						timeout={100}
+						timeout={200}
 						classNames={"fade-in-up"}
-						in={isTitleVisible}
+						in={isVisible}
 					>
 						<Htag
 							ref={subtitleRef}
@@ -85,14 +68,17 @@ export const ProjectsBlock = ({
 					</CSSTransition>
 				)}
 
-				<ProjectList projects={projects.slice(0, visibleProjectsCount)} />
+				<ProjectList
+					projects={projects.slice(0, visibleProjectsCount)}
+					setIsVisible={setIsVisible}
+				/>
 
 				{projects.length > visibleProjectsCount && (
 					<CSSTransition
 						nodeRef={buttonRef}
-						timeout={100}
+						timeout={800}
 						classNames={"fade-in"}
-						in={isButtonVisible}
+						in={isVisible}
 					>
 						<Button
 							ref={buttonRef}
